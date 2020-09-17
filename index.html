@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="./cm.css" />
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #editor {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 1rem;
+  }
+
+  .CodeMirror {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+
+    height: 100vh;
+  }
+
+  .CodeMirror-line {
+    margin-top: 1rem!;
+    margin-bottom: 1rem!;
+  }
+
+  .cm-s-default,
+  .cm-header {
+    color: #111 !important;
+  }
+
+  .cm-header-1 {
+    font-size: 3rem;
+  }
+  .cm-header-2 {
+    font-size: 2.5rem;
+  }
+  .cm-header-3 {
+    font-size: 2.3rem;
+  }
+  .cm-header-4 {
+    font-size: 1.9rem;
+  }
+
+  /* lists */
+  .cm-variable-2 {
+    color: #111;
+  }
+</style>
+
+<body>
+  <div id="editor"></div>
+</body>
+
+<script src="./cm.js"></script>
+<script src="./markdown.js"></script>
+<script>
+  var editor = CodeMirror(document.querySelector("#editor"), {
+    mode: "markdown",
+    value: `# Content\n## Main\nLet's see some basic things about this markdown editor. First off, lists:\n\n- Are they working correclty\n- Yes, hopefully\n\nThe user is required to leave extra lines in between shit. Now let's try numbers! They are exciting, are they not:\n\n1. This is the absolute first. Let's go lower.\n2. Is my favorite number.\n3. What is your favorite number?`,
+    lineWrapping: true,
+  });
+</script>
