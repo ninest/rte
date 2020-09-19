@@ -18,15 +18,22 @@
 
     height: 100vh;
   }
-
   .CodeMirror-line {
+    width: 100%;
+  }
+
+  /* .CodeMirror-line {
     margin-top: 1rem!;
     margin-bottom: 1rem!;
-  }
+  } */
 
   .cm-s-default,
   .cm-header {
     color: #111 !important;
+  }
+
+  .cm-header {
+    line-height: 2;
   }
 
   .cm-header-1 {
@@ -44,7 +51,19 @@
 
   /* lists */
   .cm-variable-2 {
-    color: #111;
+    color: #111 !important;
+  }
+
+  /* code */
+  .cm-comment {
+    font-family: "Courier New", Courier, monospace;
+    background-color: black;
+    color: white !important;
+    display: block;
+
+    margin-bottom: -1.5rem;
+    padding: 0.5rem;
+    /* width: 100% !important; */
   }
 </style>
 
@@ -57,7 +76,8 @@
 <script>
   var editor = CodeMirror(document.querySelector("#editor"), {
     mode: "markdown",
-    value: `# Content\n## Main\nLet's see some basic things about this markdown editor. First off, lists:\n\n- Are they working correclty\n- Yes, hopefully\n\nThe user is required to leave extra lines in between shit. Now let's try numbers! They are exciting, are they not:\n\n1. This is the absolute first. Let's go lower.\n2. Is my favorite number.\n3. What is your favorite number?`,
+    value:
+      "# Content\n## Main\nLet's see some basic things about this markdown editor. First off, lists:\n\n- Are they working correclty\n- Yes, hopefully\n\nThe user is required to leave extra lines in between stuff. Now let's try numbers! They are exciting, are they not:\n\n1. This is the absolute first. Let's go lower.\n2. Is my favorite number.\n3. What is your favorite number?\n\n```js\nconsole.log('Help')\n```",
     lineWrapping: true,
   });
 </script>
